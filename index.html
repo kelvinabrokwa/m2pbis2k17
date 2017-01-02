@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+  <title>M2PBIS2K17</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <style>
+    html, body { font-family: 'Gloria Hallelujah', cursive; }
+    .big { font-size: 4em; }
+    body {
+      animation: colorchange 4s infinite;
+      -webkit-animation: colorchange 4s infinite; /* Chrome and Safari */
+      text-shadow: 3px 3px rgba(0,0,0,0.5);
+    }
+    img { margin-bottom: 10px; }
+    @keyframes colorchange
+    {
+      0% { background: green; }
+      50% { background: gold; }
+      100% { background: green; }
+    }
+
+    @-webkit-keyframes colorchange
+    {
+      0% { background: green; }
+      50% { background: gold; }
+      100% { background: green; }
+    }
+    @-moz-keyframes color-change {
+      0% { background: green; }
+      50% { background: gold; }
+      100% { background: green; }
+    }
+    .masonry-container { width: 100%; }
+    .masonry-ul {
+      list-style: none;
+      -webkit-padding-start: 0px;
+      -moz-padding-start: 0px;
+      padding-start: 0px;
+      -webkit-column-gap: 10px;
+      -moz-column-gap: 10px;
+      column-gap: 10px;
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+      width: 100%;
+    }
+    .center { text-align: center; }
+    .inline { display: inline-block; position: fixed }
+    .bg-white { background-color: rgba(255,255,255,0.5); }
+  </style>
+</head>
+<body>
+  <div id='msg' class='center inline bg-white'>
+    <span class='big'>M2PBIS2K17</span>
+    <p>Monday, January 16</p>
+    <p>The M2Pad</p>
+    <p>its gonna be lit</p>
+  </div>
+
+  <div class='masonry-container'>
+    <ul class='masonry-ul'>
+      <li><img src='img/marg.jpg' width='100%'></li>
+      <li><img src='img/leopards.jpg' width='100%'></li>
+      <li><img src='img/esteban.jpg' width='100%'></li>
+      <li><img src='img/halloween.jpg' width='100%'></li>
+      <li><img src='img/babushka.PNG' width='100%'></li>
+      <li><img src='img/rowans.jpg' width='100%'></li>
+      <li><img src='img/vip.jpg' width='100%'></li>
+      <li><img src='img/tabled.png' width='100%'></li>
+      <li><img src='img/pbr.jpg' width='100%'></li>
+      <li><img src='img/weed_world.jpg' width='100%'></li>
+      <li><img src='img/lyuba_sleep.jpg' width='100%'></li>
+      <li><img src='img/dan_daze.jpg' width='100%'></li>
+      <li><img src='img/volley.jpg' width='100%'></li>
+      <li><img src='img/walmart.jpg' width='100%'></li>
+      <li><img src='img/wiz.jpg' width='100%'></li>
+      <li><img src='img/keg_stand.jpg' width='100%'></li>
+      <li><img src='img/eileen_mary.jpg' width='100%'></li>
+    </ul>
+  </div>
+  <script>
+    let w = $(document).width() - 100,
+        h = 600;
+
+    window.addEventListener('resize', function() {
+      w = $(document).width() - 100;
+    });
+
+    $(document).ready(animateMessage);
+
+    function animateMessage() {
+      let x = Math.floor(Math.random() * w) - 100;
+      let y = Math.floor(Math.random() * h);
+      $('#msg').animate({ left: x, top: y }, function() {
+        animateMessage();
+      });
+    }
+  </script>
+</body>
+</html>
